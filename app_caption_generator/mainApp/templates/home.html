@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h3 style="text-align: center;">System of Image-Text generation</h3>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="">
+            <form action="">
+                <div class="form-group">
+                    <label for="imageUpload">Upload image</label>
+                    <input type="file" class="form-control-file" id="imageUpload">
+                </div>
+            </form>
+            
+            <img id="uploadedImage" src="{% static 'images/default.jpg' %}" class="rounded mx-auto d-block" width="450" height="275"><br><br>
+
+            <button type="button" id="btnPredict" class="btn btn-primary btn-block">
+                <i class="fa fa-upload" aria-hidden="true"></i> Save and Predict
+            </button><br>                
+            <button type="button" id="btnRefresh" class="btn btn-success btn-block">
+                <i class="fa fa-broom" aria-hidden="true"></i> Refresh
+            </button><br><br>
+        </div>
+    </div>
+    
+    <div id="text-description">
+        <p id="txtDescription" class="text-center">the text predicted...</p>
+    </div>
+    <br><br>
+    
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+    
+<!-- include external javascript files -->
+<script src="{% static 'js/home.js' %}"></script>    
+
+{% endblock %}
